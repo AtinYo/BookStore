@@ -1,0 +1,13 @@
+package beans;
+
+public class AdressBean {
+	private String aID;
+	private String uID;
+	private String aAdress;
+	
+	public AdressBean(){
+		aID=null;
+		uID=null;
+		aAdress=null;
+	}
+}

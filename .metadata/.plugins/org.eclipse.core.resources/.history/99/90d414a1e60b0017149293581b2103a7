@@ -1,0 +1,16 @@
+package beans;
+public class UserBean{
+	private String uID;
+	private String uName;
+	private String uAccount;
+	private String uPassWord;
+	private String uType;
+	
+	public UserBean(){
+		uID=null;
+		uName=null;
+		uAccount=null;
+		uPassWord=null;
+		uType=null;
+	}
+}
