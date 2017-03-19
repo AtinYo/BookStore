@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="14" version="2.0">
+<workbench progressCount="24" version="2.0">
 <workbenchAdvisor/>
-<window height="742" maximized="true" width="751" x="569" y="0">
+<window height="742" width="886" x="403" y="7">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
 <coolbarLayout locked="0">
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="136" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="124" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="com.genuitec.eclipse.j2eedt.core.ejb" itemType="typeToolBarContribution" x="55" y="22"/>
 <coolItem id="com.genuitec.eclipse.uml.actions" itemType="typeToolBarContribution" x="61" y="22"/>
@@ -18,7 +18,7 @@
 <coolItem id="com.genuitec.myeclipse.actions.desktop" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="com.genuitec.myeclipse.actions.reporting" itemType="typeToolBarContribution" x="78" y="22"/>
 <coolItem id="com.genuitec.myeclipse.actions.screencapture" itemType="typeToolBarContribution" x="55" y="22"/>
-<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="175" y="22"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="359" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="101" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="101" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
@@ -40,17 +40,32 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrderBean.java" partName="OrderBean.java" path="G:/BookStore/BookStore/BookStore/src/beans/OrderBean.java" title="OrderBean.java" tooltip="BookStore/src/beans/OrderBean.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/beans/OrderBean.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="341" selectionTopPixel="136"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDAO.java" partName="UserDAO.java" path="G:/BookStore/BookStore/BookStore/src/dao/UserDAO.java" title="UserDAO.java" tooltip="BookStore/src/dao/UserDAO.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/dao/UserDAO.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="455" selectionTopPixel="255"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdressBean.java" partName="AdressBean.java" path="G:/BookStore/BookStore/BookStore/src/beans/AdressBean.java" title="AdressBean.java" tooltip="BookStore/src/beans/AdressBean.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/beans/AdressBean.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="177" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BookDAO.java" partName="BookDAO.java" path="G:/BookStore/BookStore/BookStore/src/dao/BookDAO.java" title="BookDAO.java" tooltip="BookStore/src/dao/BookDAO.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/dao/BookDAO.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="177" selectionOffset="131" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrderDAO.java" partName="OrderDAO.java" path="G:/BookStore/BookStore/BookStore/src/dao/OrderDAO.java" title="OrderDAO.java" tooltip="BookStore/src/dao/OrderDAO.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/dao/OrderDAO.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="469" selectionTopPixel="230"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdressDAO.java" partName="AdressDAO.java" path="G:/BookStore/BookStore/BookStore/src/dao/AdressDAO.java" title="AdressDAO.java" tooltip="BookStore/src/dao/AdressDAO.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/dao/AdressDAO.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="205" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DBC.java" partName="DBC.java" path="G:/BookStore/BookStore/BookStore/src/dao/DBC.java" title="DBC.java" tooltip="BookStore/src/dao/DBC.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/dao/DBC.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="727" selectionTopPixel="527"/>
 </editor>
 </editors>
 <views>
@@ -68,8 +83,9 @@
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Errors (1 item)"/>
+<category IMemento.internal.id="Warnings"/>
 </expanded>
-<columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -304,61 +320,162 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" path="/BookStore/WebRoot/WEB-INF/web.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/UserBean.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/beans/UserBean.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/beans/BookBean.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/beans/OrderBean.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/beans/AdressBean.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/dao/DBSys.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/dao/UserDAO.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/dao/BookDAO.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/dao/AdressDAO.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/dao/DBC.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/dao/OrderDAO.java"/>
 </editors>
-<item historyLabel="web.xml" index="0"/>
-<item historyLabel="UserBean.java" index="1">
-<position info="not_deleted" x="14" y="0"/>
+<item historyLabel="DBSys.java" index="0">
+<position info="not_deleted" x="0" y="1554"/>
 </item>
-<item historyLabel="UserBean.java" index="2">
-<position info="not_deleted" x="693" y="0"/>
+<item historyLabel="UserDAO.java" index="1">
+<position info="not_deleted" x="474" y="0"/>
 </item>
-<item historyLabel="BookBean.java" index="3">
-<position/>
+<item historyLabel="DBC.java" index="4">
+<position info="not_deleted" x="727" y="0"/>
 </item>
-<item historyLabel="UserBean.java" index="2">
-<position info="not_deleted" x="693" y="0"/>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="BookBean.java" index="3">
-<position/>
+<item historyLabel="UserDAO.java" index="1">
+<position info="not_deleted" x="474" y="0"/>
 </item>
-<item historyLabel="BookBean.java" index="3">
-<position/>
+<item historyLabel="UserDAO.java" index="1">
+<position info="not_deleted" x="0" y="102"/>
 </item>
-<item historyLabel="OrderBean.java" index="4">
-<position info="not_deleted" x="1213" y="0"/>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="104" y="0"/>
 </item>
-<item historyLabel="BookBean.java" index="3">
-<position/>
+<item historyLabel="UserDAO.java" index="1">
+<position info="not_deleted" x="104" y="0"/>
 </item>
-<item historyLabel="OrderBean.java" index="4">
-<position info="not_deleted" x="1213" y="0"/>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="473" y="0"/>
 </item>
-<item historyLabel="UserBean.java" index="2">
-<position info="not_deleted" x="693" y="0"/>
+<item historyLabel="UserDAO.java" index="1">
+<position info="not_deleted" x="104" y="0"/>
 </item>
-<item historyLabel="OrderBean.java" index="4">
-<position info="not_deleted" x="1213" y="0"/>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="473" y="0"/>
 </item>
-<item historyLabel="OrderBean.java" index="4">
-<position info="not_deleted" x="218" y="0"/>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="473" y="0"/>
 </item>
-<item historyLabel="BookBean.java" index="3">
+<item historyLabel="UserDAO.java" index="1">
+<position info="not_deleted" x="104" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="473" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="240" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="314" y="0"/>
+</item>
+<item historyLabel="UserDAO.java" index="1">
+<position info="not_deleted" x="104" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="314" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="346" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="383" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="473" y="0"/>
+</item>
+<item historyLabel="UserDAO.java" index="1">
+<position info="not_deleted" x="456" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="473" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="469" y="0"/>
+</item>
+<item historyLabel="UserDAO.java" index="1">
+<position info="not_deleted" x="455" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="469" y="0"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="463" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="155" y="0"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="458" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="155" y="0"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="458" y="0"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="458" y="0"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="155" y="0"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="204" y="1"/>
+</item>
+<item historyLabel="AdressDAO.java" index="3">
+<position info="not_deleted" x="205" y="0"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="204" y="1"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="232" y="0"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="282" y="0"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="334" y="0"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="370" y="0"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="409" y="0"/>
+</item>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="461" y="0"/>
+</item>
+<item historyLabel="OrderDAO.java" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="OrderBean.java" index="4">
-<position info="not_deleted" x="341" y="0"/>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="104" y="0"/>
 </item>
-<item historyLabel="AdressBean.java" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="OrderDAO.java" index="5">
+<position info="not_deleted" x="104" y="0"/>
 </item>
-<item active="true" historyLabel="AdressBean.java" index="5">
-<position info="not_deleted" x="137" y="0"/>
+<item historyLabel="BookDAO.java" index="2">
+<position info="not_deleted" x="131" y="177"/>
+</item>
+<item historyLabel="OrderDAO.java" index="5">
+<position info="not_deleted" x="104" y="0"/>
+</item>
+<item historyLabel="OrderDAO.java" index="5">
+<position info="not_deleted" x="377" y="0"/>
+</item>
+<item historyLabel="OrderDAO.java" index="5">
+<position info="not_deleted" x="416" y="0"/>
+</item>
+<item active="true" historyLabel="OrderDAO.java" index="5">
+<position info="not_deleted" x="456" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -377,6 +494,24 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DBC.java" tooltip="BookStore/src/dao/DBC.java">
+<persistable path="/BookStore/src/dao/DBC.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdressDAO.java" tooltip="BookStore/src/dao/AdressDAO.java">
+<persistable path="/BookStore/src/dao/AdressDAO.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrderDAO.java" tooltip="BookStore/src/dao/OrderDAO.java">
+<persistable path="/BookStore/src/dao/OrderDAO.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BookDAO.java" tooltip="BookStore/src/dao/BookDAO.java">
+<persistable path="/BookStore/src/dao/BookDAO.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDAO.java" tooltip="BookStore/src/dao/UserDAO.java">
+<persistable path="/BookStore/src/dao/UserDAO.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DBSys.java" tooltip="BookStore/src/dao/DBSys.java">
+<persistable path="/BookStore/src/dao/DBSys.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdressBean.java" tooltip="BookStore/src/beans/AdressBean.java">
 <persistable path="/BookStore/src/beans/AdressBean.java"/>
 </file>

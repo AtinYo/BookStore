@@ -1,0 +1,21 @@
+package dao;
+import java.sql.*;
+public class DBSys {
+	public static DBSys Instance=null;
+	private Connection con;
+	private Statement stmt;
+	private ResultSet rest;
+	
+	private DBSys(){
+		con=null;
+		stmt=null;
+		rest=null;
+	}
+	
+	public static DBSys getInstance(){
+		if(Instance==null){
+			Instance=new DBSys();
+		}
+		return Instance;
+	}
+}
