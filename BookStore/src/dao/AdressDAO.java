@@ -5,16 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdressDAO {
-	public static AdressDAO Instance=null;
 	
-	private AdressDAO(){
+	public AdressDAO(){
 		
-	}
-	
-	public AdressDAO getInstance(){
-		if(Instance==null)
-			Instance=new AdressDAO();
-		return Instance;
 	}
 	
 	public void addAdress(){
@@ -29,7 +22,7 @@ public class AdressDAO {
 		
 	}
 
-	public void selectAdress(){
+	public void findAdress(){
 		
 	}
 }

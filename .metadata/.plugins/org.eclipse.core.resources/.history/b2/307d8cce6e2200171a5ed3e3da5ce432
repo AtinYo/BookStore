@@ -1,0 +1,54 @@
+package dao;
+import dao.DBC;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import beans.OrderBean;
+
+public class OrderDAO {
+	
+	private DBC dbc;//连接的基类
+	private Statement ostmt;//用于更新数据库
+	private ResultSet orest;//查询结果集
+
+	public OrderDAO(){
+		dbc=new DBC();
+		ostmt=dbc.creStatement();
+		orest=null;
+	}
+	
+	public boolean addOrder(OrderBean oder){
+		int rowCount=0;
+		if(oder!=null){
+			try{
+				rowCount=bstmt.executeUpdate("insert into books(bTitle,bAuthor,bDescription,bCount,bPublisher," +
+						"bLanguage,bTime,cID) values('" +
+						book.getbTitle()+"','"+book.getbAuthor()+"','"+book.getbDescription()+"',"+book.getbCount()+
+						",'"+book.getbPublisher()+"','"+book.getbLanguage()+"','"+book.getbTime()+"',"+book.getcID()+
+						")");
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
+		return rowCount==0?false:true;
+	}
+	
+	public void delOrder(){
+		
+	}
+
+	public void updateOrder(){
+		
+	}
+	
+	public void findOrder(){
+		
+	}
+	
+	public void CloseBookDAO(){
+		orest=null;
+		ostmt=null;
+		dbc.CloseAll();
+	}
+}

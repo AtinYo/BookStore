@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
+<libraryInfo home="G:\JAVA" version="1.8.0_60">
+<bootpath>
+<entry path="G:\JAVA\lib\resources.jar"/>
+<entry path="G:\JAVA\lib\rt.jar"/>
+<entry path="G:\JAVA\lib\sunrsasign.jar"/>
+<entry path="G:\JAVA\lib\jsse.jar"/>
+<entry path="G:\JAVA\lib\jce.jar"/>
+<entry path="G:\JAVA\lib\charsets.jar"/>
+<entry path="G:\JAVA\lib\jfr.jar"/>
+<entry path="G:\JAVA\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="G:\JAVA\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="G:\JAVA\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
 <libraryInfo home="G:\Myeclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013" version="1.6.0_13">
 <bootpath>
 <entry path="G:\Myeclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\resources.jar"/>

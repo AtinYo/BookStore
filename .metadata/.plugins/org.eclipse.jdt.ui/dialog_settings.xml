@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
+	<item value="3" key="TypeHierarchyViewPart.orientation"/>
+	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
+	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+	</section>
+	<section name="NewWebXmlLinkCreationWizardPage">
+		<item value="This is the display name of my J2EE component" key="display_name"/>
+		<item value="/BookStore/WebRoot/WEB-INF" key="filePath"/>
+		<item value="This is the description of my J2EE component" key="description"/>
+		<item value="true" key="do_mapping"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="true" key="group_libraries"/>
@@ -18,10 +28,25 @@
 	</section>
 	<section name="completion_proposal_size">
 	</section>
+	<section name="NewServletCreationWizardPage">
+		<item value="1] Default template for Servlet" key="template"/>
+		<item value="true" key="create_constructor"/>
+		<item value="false" key="create_dodelete"/>
+		<item value="true" key="create_doget"/>
+		<item value="false" key="create_servletinfo"/>
+		<item value="true" key="create_doinitdestroy"/>
+		<item value="true" key="create_unimplemented"/>
+		<item value="true" key="create_main"/>
+		<item value="true" key="create_dopost"/>
+		<item value="false" key="create_doput"/>
+	</section>
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="GenerateConstructorUsingFieldsSelectionDialog">
 		<item value="false" key="OmitCallToSuper"/>
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item value="3" key="pageIndex"/>
 	</section>
 	<section name="SourceActionDialog.methods">
 		<item value="1" key="VisibilityModifier"/>
@@ -32,5 +57,9 @@
 	<section name="AddGetterSetterDialog">
 		<item value="false" key="RemoveFinal"/>
 		<item value="false" key="SortOrdering"/>
+	</section>
+	<section name="NewJspCreationWizardPage">
+		<item value="Default JSP template" key="templatezh_CN"/>
+		<item value="/BookStore/WebRoot/JSP" key="filePath"/>
 	</section>
 </section>

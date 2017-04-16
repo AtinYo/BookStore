@@ -1,0 +1,24 @@
+#Sat Apr 08 20:02:55 CST 2017
+myeclipseTomcatServer.BookStore.deploymentPath=G\:\\BookStore\\BookStore\\.metadata\\.me_tcat\\webapps\\BookStore
+tomcat6Server.BookStore.shouldOverwrite=false
+tomcat6Server.BookStore.deploymentPath=C\:\\Program Files\\Apache Software Foundation\\Tomcat 6.0\\webapps\\BookStore
+myeclipseTomcatServer.BookStore.type=WebDeployment
+eclipse.preferences.version=1
+tomcat6Server.BookStore.IEARProjectName=
+myeclipseTomcatServer.BookStore.shouldOverwrite=false
+tomcat6Server.BookStore.type=WebDeployment
+myeclipseTomcatServer.BookStore.contextRoot=/BookStore
+myeclipseTomcatServer.BookStore.deployIsOverProject=false
+tomcat6Server.BookStore.contextRoot=/BookStore
+myeclipseTomcatServer.BookStore.IEARProjectName=
+myeclipseTomcatServer.BookStore.isExploded=true
+myeclipseTomcatServer.BookStore.altContextRoot=/BookStore
+tomcat6Server.BookStore.deployIsOverProject=false
+tomcat6Server.BookStore.isDeployed=true
+tomcat6Server.BookStore.isUptoDate=true
+tomcat6Server.BookStore.altContextRoot=
+tomcat6Server.BookStore.shouldBackup=false
+myeclipseTomcatServer.BookStore.isDeployed=true
+tomcat6Server.BookStore.isExploded=true
+myeclipseTomcatServer.BookStore.shouldBackup=false
+myeclipseTomcatServer.BookStore.isUptoDate=true

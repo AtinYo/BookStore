@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="dao.BookDAO"/>
+<fullyQualifiedTypeName name="dao.ClassficationDAO"/>
+<fullyQualifiedTypeName name="beans.ClassficationBean"/>
+<fullyQualifiedTypeName name="dao.UserDAO"/>
+<fullyQualifiedTypeName name="beans.BookBean"/>
+<fullyQualifiedTypeName name="dao.DBC"/>
+<fullyQualifiedTypeName name="beans.UserBean"/>
+<fullyQualifiedTypeName name="beans.OrderBean"/>
+<fullyQualifiedTypeName name="dao.OrderDAO"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>
