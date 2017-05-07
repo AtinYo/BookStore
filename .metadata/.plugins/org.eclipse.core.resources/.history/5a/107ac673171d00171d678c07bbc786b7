@@ -1,0 +1,64 @@
+package dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import beans.ClassficationBean;
+
+public class ClassficationDAO {
+	private DBC dbc;//连接的基类
+	private Statement cstmt;//用于更新数据库
+	private ResultSet crest;//查询结果集
+	
+	public ClassficationDAO(){
+		dbc=new DBC();
+		cstmt=dbc.creStatement();
+		crest=null;
+	}
+	
+	//通过分类名字查询是否存在该分类
+	public boolean isExitst(String name){
+		try{
+			if(!DBC.isNullOrEmpty(name)){
+				crest=dbc.creResultSet("select cID from classfication where binary cName = '"+name+"'");
+				if(crest==null || !crest.next()){
+					return false;
+				}
+				else{
+					return true;
+				}
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return false;
+	}
+	//通过分类名字来增加分类
+	public boolean addClassfication(String name){
+		int rowCount=0;
+		if(!DBC.isNullOrEmpty(name) && !isExitst(name)){
+			try{
+				rowCount=cstmt.executeUpdate("insert into classfication(cName) values('"+name+"')");
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
+		return rowCount==0?false:true;
+	}
+	
+	
+	//通过分类名字来删除分类
+	public boolean delClassfication(String name){
+		int rowCount=0;
+		if(!DBC.isNullOrEmpty(name)){
+			try{
+				rowCount=cstmt.executeUpdate("delete from classfication where binary cName='"+name+"'");
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
+		return rowCount==0?false:true;
+	}
+	
+}
