@@ -5,8 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>List of all orders</title>
-</head>
-<body>
 
+<body>
 </body>
 </html>
