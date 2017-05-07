@@ -6,9 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>User Login</title>
-
 </head>
+
 <body>
+<%! boolean isLogin = false; %>
 	<div class="container-fluid" style="width: 100%; font-size: 1.2em;">
 		<div class="panel panel-default">
 			<div class="panel-body" align="center">

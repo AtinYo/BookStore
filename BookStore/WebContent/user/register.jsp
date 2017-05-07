@@ -20,7 +20,7 @@
 							                       
 							<form action="RegisterServlet" method="post">
 								<div class="form-group">
-									<label for="userName" class="control-label" >您的姓名</label>
+									<label for="userName" class="control-label" >您的用户名</label>
 									<input type="text" class="form-control" name="regUserNem" id="regUserNem"
                                            required="required" />            
 								</div>
