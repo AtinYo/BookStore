@@ -1,24 +1,23 @@
 package dao;
 import java.sql.*;
 public class DBC {
-	public static DBC Instance=null;
 	private Connection con;
 	private Statement stmt;
 	private ResultSet rest;
 	
-	private DBC(){
-		con=null;
+	public DBC(){
+		con=getConnect();
 		stmt=null;
 		rest=null;
 	}
 	
-	private void CloseAll(){
+	public void CloseAll(){
 		if(rest!=null)
 			try{
 				rest.close();
-				}catch(SQLException e){
-					e.printStackTrace();
-					}
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
 		if(stmt!=null)
 			try{
 				stmt.close();
@@ -33,19 +32,7 @@ public class DBC {
 			}
 	}
 	
-	public static DBC getInstance(){
-		if(Instance==null){
-			Instance=new DBC();
-		}
-		return Instance;
-	}
-	
-	public static void freeInstance(){
-		if(Instance!=null)
-			Instance.CloseAll();
-	}
-	
-	public Connection getConnect(){
+	private Connection getConnect(){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 		}catch(ClassNotFoundException e){
@@ -60,16 +47,26 @@ public class DBC {
 	}
 	
 	public Statement creStatement(){
-		try{
-			if(con!=null)
-			stmt=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
-		}catch(SQLException e){
-			e.printStackTrace();
+		if(stmt==null){
+			try{
+				if(con!=null)
+				stmt=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
 		}
 		return stmt;
 	}
 	
 	public ResultSet creResultSet(String sql){
+		if(rest!=null){
+			try{
+				rest.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+		    }
+			rest=null;
+		}
 		try{
 			if(stmt!=null)
 			rest=stmt.executeQuery(sql);
@@ -77,6 +74,13 @@ public class DBC {
 			e.printStackTrace();
 		}
 		return rest;
+	}
+	
+	public static boolean isNullOrEmpty(String str){
+		if(str==null||str.equals("")){
+			return true;
+		}
+		return false;
 	}
 	
 }

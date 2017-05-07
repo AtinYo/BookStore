@@ -1,16 +1,16 @@
 package beans;
 public class UserBean{
-	private String uID;
+	private String uID;//beans装数据同一用string,但是表里不一定是string
 	private String uName;
 	private String uAccount;
-	private String uPassWord;
-	private String uType;
+	private String uPassword;
+	private String uType;//0代表用户,1代表管理员
 	
 	public UserBean(){
 		uID=null;
 		uName=null;
 		uAccount=null;
-		uPassWord=null;
+		uPassword=null;
 		uType=null;
 	}
 
@@ -38,12 +38,12 @@ public class UserBean{
 		this.uAccount = uAccount;
 	}
 
-	public String getuPassWord() {
-		return uPassWord;
+	public String getuPassword() {
+		return uPassword;
 	}
 
-	public void setuPassWord(String uPassWord) {
-		this.uPassWord = uPassWord;
+	public void setuPassword(String uPassword) {
+		this.uPassword = uPassword;
 	}
 
 	public String getuType() {

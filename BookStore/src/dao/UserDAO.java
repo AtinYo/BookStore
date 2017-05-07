@@ -4,34 +4,147 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import beans.UserBean;
+
 public class UserDAO {
-	public static UserDAO Instance=null;
 	
-	private UserDAO(){
-		
+	private DBC dbc;//连接的基类
+	private Statement ustmt;//用于更新数据库
+	private ResultSet urest;//查询结果集
+	
+	public UserDAO(){
+		dbc=new DBC();
+		ustmt=dbc.creStatement();
+		urest=null;
 	}
-	
-	public static UserDAO getInstance(){
-		if(Instance==null){
-			Instance=new UserDAO();
+
+	public boolean isExist(String account){//通过账号查询用户是否已经存在
+		try{
+			if(!DBC.isNullOrEmpty(account)){
+				urest=dbc.creResultSet("select uID from users where binary uAccount = '"+account+"'");
+				if(urest==null || !urest.next()){
+					return false;
+				}
+				else{
+					return true;
+				}
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
 		}
-		return Instance;
+		return false;
 	}
 	
-	public void addUser(){
-		
+	//通过账号密码来判断是否存在此用户
+	public boolean isLogin(String account,String password){
+		try{
+			if(!DBC.isNullOrEmpty(account) && !DBC.isNullOrEmpty(password)){
+				urest=dbc.creResultSet("select uID from users where binary uAccount = '"+account+"' and binary uPassword = '"+password+"'");
+				if(urest==null || !urest.next()){
+					return false;
+				}
+				else{
+					return true;
+				}
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	//用户的uType默认为0，管理的才是1
+	public boolean addUser(String account,String password,String name){//增加用户，成功返回true失败返回false
+		int rowCount=0;//受影响的行数
+		if(!DBC.isNullOrEmpty(account) && !DBC.isNullOrEmpty(password) &&
+				!DBC.isNullOrEmpty(name) && !isExist(account)){//只有不存在相同账号的用户才允许增加
+			try{
+				rowCount=ustmt.executeUpdate("insert into users(uName,uAccount,uPassword,uType) values" +
+						"('"+name+"','"+account+"','"+password+"',0)");
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
+		return (rowCount==0)?false:true;
 	}
 	
-	public void delUser(){
-		
+	public boolean delUser(String account){//通过账号删除用户,成功返回true,失败返回false
+		int rowCount=0;//受影响行数,如果是零就代表没有删除，即删除失败
+		if(!DBC.isNullOrEmpty(account)){
+			try{
+				rowCount=ustmt.executeUpdate("delete from users where binary uAccount = '"+account+"'");
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
+		return rowCount==0?false:true;
 	}
 	
-	public void updateUser(){
-		
+	
+	//修改用户信息传入的参数user必须是正确的,否则会出错,每一项都必须有值且正确，这个参数正确性由Servlet来保证
+	public boolean updateUser(UserBean user){//修改用户信息是修改除了ID以外的数据项，所以可以通过ID来修改
+		int rowcount=0;
+		if(user!=null && !DBC.isNullOrEmpty(user.getuID())){
+			try{
+				rowcount=ustmt.executeUpdate("update users set "+
+						"uName='"+user.getuName()+"',uAccount='"+user.getuAccount()+"',uPassword='"+user.getuPassword()+
+						"',uType="+user.getuType()+
+						" where uID="+user.getuID());
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
+		return rowcount==0?false:true;
 	}
 	
-	public void selectUser(){
-		
+	public UserBean findUserWithID(Integer id){
+		try{
+			if(id!=null){
+				urest=dbc.creResultSet("select * from users where uID="+id);
+				if(urest==null || !urest.next()){
+					return null;
+				}
+				else{
+					UserBean temp=new UserBean();
+					temp.setuID(urest.getString("uID"));
+					temp.setuName(urest.getString("uName"));
+					temp.setuAccount(urest.getString("uAccount"));
+					temp.setuPassword(urest.getString("uPassword"));
+					temp.setuType(urest.getString("uType"));
+					return temp;
+				}
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
+	public UserBean findUserWithAccount(String account){
+		try{
+			if(!DBC.isNullOrEmpty(account)){
+				urest=dbc.creResultSet("select * from users where binary uAccount='"+account+"'");
+				if(urest==null || !urest.next()){
+					return null;
+				}
+				else{
+					UserBean temp=new UserBean();
+					temp.setuID(urest.getString("uID"));
+					temp.setuName(urest.getString("uName"));
+					temp.setuAccount(urest.getString("uAccount"));
+					temp.setuPassword(urest.getString("uPassword"));
+					temp.setuType(urest.getString("uType"));
+					return temp;
+				}
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public void CloseUserDAO(){
+		urest=null;
+		ustmt=null;
+		dbc.CloseAll();
+	}
 }

@@ -9,6 +9,7 @@ public class BookBean {
 	private String bPublisher;
 	private String bLanguage;
 	private String bTime;
+	private String cID;
 	
 	public BookBean(){
 		bID=null;
@@ -83,5 +84,13 @@ public class BookBean {
 
 	public void setbTime(String bTime) {
 		this.bTime = bTime;
+	}
+	
+	public String getcID() {
+		return cID;
+	}
+
+	public void setcID(String cID) {
+		this.cID = cID;
 	}
 }
