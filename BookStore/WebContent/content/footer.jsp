@@ -8,5 +8,9 @@
 </head>
 <body>
 
+
 </body>
+<div class="about bottom">
+	Copyright (c) 2017 YUAN Putian. All rights reserved.<br>
+</div>
 </html>
