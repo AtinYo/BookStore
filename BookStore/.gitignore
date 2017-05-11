@@ -1,13 +1,3 @@
-.project
-.metadata
-.mymetadata
-
-.classpath
-.settings/
-.buildpath
-
-WebRoot/WEB-INF/classes/
-
 # IDE
 .idea/
 .vscode/
