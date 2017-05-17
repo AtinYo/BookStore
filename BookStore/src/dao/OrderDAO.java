@@ -120,6 +120,9 @@ public class OrderDAO {
 			}
 			int m_pageSize=pageSize;
 			int MaxPageNum=(rowCount%m_pageSize==0)?(rowCount/m_pageSize):(rowCount/m_pageSize+1);
+			if(MaxPageNum<=0){
+				MaxPageNum=1;
+			}
 			int m_pageNum=pageNum;
 			if(m_pageNum<1){
 				m_pageNum=1;

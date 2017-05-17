@@ -66,7 +66,7 @@ public class CalculateCenterServlet extends HttpServlet {
 		oDAO.CloseBookDAO();
 		request.getSession().setAttribute("CalculateCenterPage_isCreateOrder", isCreateOrder);
 		
-		response.sendRedirect("/BookStore/JSP/CalculateCenterPage.jsp");
+		response.sendRedirect("/BookStore/JSP/pages/CalculateCenterPage.jsp");
 	}
 
 	/**

@@ -87,7 +87,7 @@ public class UserOrderServlet extends HttpServlet {
 		request.getSession().setAttribute("UserOrderPage_OrderList",oList);
 		oDAO.CloseBookDAO();
 		
-		response.sendRedirect("/BookStore/JSP/UserOrderPage.jsp");
+		response.sendRedirect("/BookStore/JSP/user/UserOrderPage.jsp");
 	}
 
 	/**

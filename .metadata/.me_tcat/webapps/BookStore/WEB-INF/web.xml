@@ -72,7 +72,7 @@
   <url-pattern>/servlet/SearchServlet</url-pattern>
  </servlet-mapping>
  <welcome-file-list>
-  <welcome-file>/JSP/SearchPage.jsp</welcome-file>
+  <welcome-file>/JSP/pages/MainPage.jsp</welcome-file>
  </welcome-file-list>
  <login-config>
   <auth-method>BASIC</auth-method>

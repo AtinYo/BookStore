@@ -10,6 +10,8 @@ public class BookBean {
 	private String bLanguage;
 	private String bTime;
 	private String cID;
+	private String bImg;
+	private String bSoldNum;
 	
 	public BookBean(){
 		bID=null;
@@ -20,6 +22,7 @@ public class BookBean {
 		bPublisher=null;
 		bLanguage=null;
 		bTime=null;
+		bImg=null;
 	}
 
 	public String getbID() {
@@ -92,5 +95,21 @@ public class BookBean {
 
 	public void setcID(String cID) {
 		this.cID = cID;
+	}
+	
+	public String getbImg(){
+		return bImg;
+	}
+	
+	public void setbImg(String bImg){
+		this.bImg = bImg;
+	}
+	
+	public String getbSoldNum(){
+		return bImg;
+	}
+	
+	public void setbSoldNum(String bSoldNum){
+		this.bSoldNum = bSoldNum;
 	}
 }

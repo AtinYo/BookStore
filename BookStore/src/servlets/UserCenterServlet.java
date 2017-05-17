@@ -74,7 +74,7 @@ public class UserCenterServlet extends HttpServlet {
 		boolean isUpdate=uDAO.updateUser(user);
 		uDAO.CloseUserDAO();
 		request.getSession().setAttribute("isUpdate", isUpdate);
-		response.sendRedirect("/BookStore/JSP/UserCenterPage.jsp");
+		response.sendRedirect("/BookStore/JSP/user/UserCenterPage.jsp");
 	}
 
 	/**

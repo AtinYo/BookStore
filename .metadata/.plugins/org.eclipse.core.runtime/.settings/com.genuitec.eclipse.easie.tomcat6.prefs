@@ -1,8 +1,8 @@
-#Sat Apr 08 20:32:49 CST 2017
+#Tue May 16 22:51:55 CST 2017
 SERVER_ENABLEMENT=true
-LIBRARY_PATH="G\:\\Myeclipse\\Common\\binary\\com.sun.java.jdk.win32.x86_1.6.0.013\\bin;C\:\\Program Files\\Apache Software Foundation\\Tomcat 6.0\\bin"
+LIBRARY_PATH="G\:\\JAVA\\bin;C\:\\Program Files\\Apache Software Foundation\\Tomcat 6.0\\bin"
 eclipse.preferences.version=1
-JDK_HOME=G\:\\Myeclipse\\Common\\binary\\com.sun.java.jdk.win32.x86_1.6.0.013
+JDK_HOME=G\:\\JAVA
 TOMCAT_BASE=C\:\\Program Files\\Apache Software Foundation\\Tomcat 6.0
 ENDORSED_DIRS="C\:\\Program Files\\Apache Software Foundation\\Tomcat 6.0/common/endorsed"
 TOMCAT_HOME=C\:\\Program Files\\Apache Software Foundation\\Tomcat 6.0

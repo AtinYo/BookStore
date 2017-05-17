@@ -65,7 +65,7 @@ public class RegisterServlet extends HttpServlet {
 		boolean isSuccessful=uDAO.addUser(account, password, name);
 		uDAO.CloseUserDAO();
 		request.getSession().setAttribute("isSuccessful", isSuccessful);
-		response.sendRedirect("/BookStore/JSP/RegisterPage.jsp");
+		response.sendRedirect("/BookStore/JSP/user/RegisterPage.jsp");
 	}
 
 	/**

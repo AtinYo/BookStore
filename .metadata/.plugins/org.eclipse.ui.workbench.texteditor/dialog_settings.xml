@@ -3,18 +3,23 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="273" key="DIALOG_WIDTH"/>
 		<item value="126" key="DIALOG_Y_ORIGIN"/>
-		<item value="400" key="DIALOG_HEIGHT"/>
 		<item value="555" key="DIALOG_X_ORIGIN"/>
+		<item value="400" key="DIALOG_HEIGHT"/>
 		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="try{&#x0D;&#x0A;&#x09;&#x09;&#x09;&#x09;&#x09;//ustmt.executeUpdate(&quot;insert into users(uName,uType,uAccount,uPassword,uImg) values(&apos;&quot;+user.getuName()+&quot;&apos;,&quot;+user.getuType()+&quot;,&apos;&quot;+user.getuAccount()+&quot;&apos;,&apos;&quot;+user.getuPassword()+&quot;&apos;,&apos;&quot;+user.getuImg()+&quot;&apos;)&quot;);&#x0D;&#x0A;&#x09;&#x09;&#x09;&#x09;}catch(SQLException e){&#x0D;&#x0A;&#x09;&#x09;&#x09;&#x09;&#x09;e.printStackTrace();&#x0D;&#x0A;&#x09;&#x09;&#x09;&#x09;}" key="selection"/>
+		<item value="MaxPageNum" key="selection"/>
 		<list key="findhistory">
+			<item value="MaxPageNum"/>
+			<item value="basePath"/>
+			<item value="&lt;ul class=&quot;pager&quot;&gt;"/>
+			<item value="isUpdate"/>
+			<item value="MainPage_isInit"/>
 			<item value="try{"/>
 			<item value="DBSys"/>
 			<item value="private String "/>

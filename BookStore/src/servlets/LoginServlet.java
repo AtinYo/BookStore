@@ -68,7 +68,7 @@ public class LoginServlet extends HttpServlet {
 			request.getSession().setAttribute("user", uDAO.findUserWithAccount(account));
 		}
 		uDAO.CloseUserDAO();
-		response.sendRedirect("/BookStore/JSP/LoginPage.jsp");
+		response.sendRedirect("/BookStore/JSP/user/LoginPage.jsp");
 	}
 
 	/**

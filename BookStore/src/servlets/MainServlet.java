@@ -64,14 +64,78 @@ public class MainServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
-		//这里是根据主页传过来要显示的最新上架书本数量Num来返回一个list即可
-		Integer pageNum=(Integer)request.getSession().getAttribute("MainPage_pageNum");
-		Integer pageSize=(Integer)request.getSession().getAttribute("MainPage_pageSize");
+		Integer currentPage;
+		Integer pageSize = 5;
+		if(request.getParameter("pageNext")!=null){
+			currentPage=Integer.parseInt(request.getParameter("pageNext"));
+		}
+		else{
+			currentPage=1;
+		}
+		request.getSession().setAttribute("MainPage_currentPage", currentPage);
+		request.getSession().setAttribute("MainPage_pageSize", pageSize);
 		List<BookBean> bList=null;
 		BookDAO bDAO=new BookDAO();
-		bList=bDAO.getNearlyBooks(pageNum,pageSize);
+		Integer SelectNavBarID=0;
+		Integer SelectCategoryID=-1;
+		//根据查询的方式来决定返回结果集
+		if(!DBC.isNullOrEmpty(request.getParameter("SelectCategoryID"))){//点击了按分类显示
+			SelectCategoryID=Integer.parseInt(request.getParameter("SelectCategoryID"));
+			request.getSession().setAttribute("MainPage_SelectCategoryID", SelectCategoryID);
+			request.getSession().setAttribute("MainPage_SelectNavBarID", -1);//置空表示没有选择导航栏
+			bList=bDAO.findBooksWithClassficationID(SelectCategoryID, currentPage, pageSize);
+		}
+		else if(!DBC.isNullOrEmpty(request.getParameter("SelectNavBarID"))){//点击了按导航选项显示
+			SelectNavBarID=Integer.parseInt(request.getParameter("SelectNavBarID"));
+			request.getSession().setAttribute("MainPage_SelectCategoryID", -1);//置空表示没有选择分类
+			request.getSession().setAttribute("MainPage_SelectNavBarID", SelectNavBarID);
+			switch(SelectNavBarID){
+				case 0://最近上架
+					bList=bDAO.getNearlyBooks(currentPage,pageSize);
+					break;
+				case 1://为您推荐
+					//还没写，需要写一个根据用户最近购买过的书籍来推荐的函数，放在BDAO里面，但是要访问Order
+					break;
+				case 2://热卖图书
+					bList=bDAO.getHotSoldBooks(currentPage, pageSize);
+					break;
+				default:
+					break;
+			}
+		}
+		else{//既没有点击分类也没有点击导航，那么就根据当前选择的类型来做处理
+			if(request.getSession().getAttribute("MainPage_SelectCategoryID") != null && (Integer)request.getSession().getAttribute("MainPage_SelectCategoryID") != -1){
+				SelectCategoryID=(Integer)request.getSession().getAttribute("MainPage_SelectCategoryID");
+				bList=bDAO.findBooksWithClassficationID(SelectCategoryID, currentPage, pageSize);
+			}
+			else if(request.getSession().getAttribute("MainPage_SelectNavBarID") != null && (Integer)request.getSession().getAttribute("MainPage_SelectNavBarID") != -1){
+				SelectNavBarID=(Integer)request.getSession().getAttribute("MainPage_SelectNavBarID");
+				switch(SelectNavBarID){
+				case 0://最近上架
+					bList=bDAO.getNearlyBooks(currentPage,pageSize);
+					break;
+				case 1://为您推荐
+					//还没写，需要写一个根据用户最近购买过的书籍来推荐的函数，放在BDAO里面，但是要访问Order
+					break;
+				case 2://热卖图书
+					bList=bDAO.getHotSoldBooks(currentPage, pageSize);
+					break;
+				default:
+					break;
+			}
+			}
+			else{//默认为选择最新上架
+				request.getSession().setAttribute("MainPage_SelectNavBarID",0);
+				bList=bDAO.getNearlyBooks(currentPage,pageSize);
+			}
+		}
 		request.getSession().setAttribute("MainPage_BookList",bList);
-		request.getSession().setAttribute("MainPage_BooksCount", bDAO.getBooksCount());
+		int count = bDAO.getBookNumAfterSearch();
+		int pageNum = 1;
+		if(count > 0){
+			pageNum = count%pageSize==0?count/pageSize:count/pageSize+1;
+		}
+		request.getSession().setAttribute("MainPage_pageNum", pageNum);
 		bDAO.CloseBookDAO();
 		
 		List<ClassficationBean> cList=null;
@@ -80,7 +144,7 @@ public class MainServlet extends HttpServlet {
 		request.getSession().setAttribute("MainPage_ClassficationList",cList);
 		cDAO.CloseClassficationDAO();
 		
-		response.sendRedirect("/BookStore/JSP/MainPage.jsp");//重定向到主页面
+		response.sendRedirect("/BookStore/JSP/pages/MainPage.jsp");//重定向到主页面
 	}
 
 	/**

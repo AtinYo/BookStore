@@ -15,21 +15,24 @@ public class BookDAO {
 	private DBC dbc;//连接的基类
 	private Statement bstmt;//用于更新数据库
 	private ResultSet brest;//查询结果集
+	private int BookNum;//用于返回某次查询后的书籍数量,用的时候要注意
 	
 	public BookDAO(){
 		dbc=new DBC();
 		bstmt=dbc.creStatement();
 		brest=null;
+		BookNum = 0;
 	}
 
 	
 	//添加书籍信息传入的参数book必须是正确的,否则会出错,每一项都必须有值且正确，这个参数正确性由Servlet来保证
+	//一开始给定默认图片(数据库里面设置默认值),增加图片路径单独处理,在上传完图片后处理,调用更新图片路径信息的函数
 	public boolean addBook(BookBean book){
 		int rowCount=0;
 		if(book!=null){
 			try{
 				rowCount=bstmt.executeUpdate("insert into books(bTitle,bAuthor,bDescription,bCount,bPublisher," +
-						"bLanguage,bTime,cID) values('" +
+						"bLanguage,bTime,cID,bImg) values('" +
 						book.getbTitle()+"','"+book.getbAuthor()+"','"+book.getbDescription()+"',"+book.getbCount()+
 						",'"+book.getbPublisher()+"','"+book.getbLanguage()+"','"+book.getbTime()+"',"+book.getcID()+
 						")");
@@ -54,6 +57,7 @@ public class BookDAO {
 	
 	
 	//更新书籍信息传入的参数book必须是正确的,否则会出错,每一项都必须有值且正确，这个参数正确性由Servlet来保证
+	//更换图片路径单独处理,因为更换路径的前提是有一个上传图片的操作
 	public boolean updateBook(BookBean book){
 		int rowCount=0;
 		if(book!=null && !DBC.isNullOrEmpty(book.getbID())){
@@ -62,7 +66,7 @@ public class BookDAO {
 						"bTitle='"+book.getbTitle()+"',bAuthor='"+book.getbAuthor()+"',bDescription='"+
 						book.getbDescription()+"',bCount="+book.getbCount()+",bPublisher='"+book.getbPublisher()+
 						"',bLanguage='"+book.getbLanguage()+"',bTime='"+book.getbTime()+"',cID="+book.getcID()+
-						" where bID="+book.getbID());
+						",bSoldNum="+book.getbSoldNum()+" where bID="+book.getbID());
 			}catch(SQLException e){
 				e.printStackTrace();
 			}
@@ -70,6 +74,19 @@ public class BookDAO {
 		return rowCount==0?false:true;
 	}
 
+	//更换书籍图片路径信息
+	public boolean updateBookImg(Integer bID,String bImg){
+		int rowCount=0;
+		if(bID!=null && !DBC.isNullOrEmpty(bImg)){
+			try{
+				rowCount=bstmt.executeUpdate("update books set bImg='"+bImg+
+						"' where bID="+bID);
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
+		return rowCount==0?false:true;
+	}
 	
 	//根据书本ID来查找书籍
 	public BookBean findBookWithID(Integer bID){
@@ -90,6 +107,8 @@ public class BookDAO {
 					book.setbLanguage(brest.getString("bLanguage"));
 					book.setbTime(brest.getString("bTime"));
 					book.setcID(brest.getString("cID"));
+					book.setbImg(brest.getString("bImg"));
+					book.setbSoldNum(brest.getString("bSoldNum"));
 					return book;
 				}
 			}
@@ -104,7 +123,7 @@ public class BookDAO {
 	//根据书名模糊查询,返回第PageNum页 不超过PageSize的list,这里会对传入的PageNum，根据PageSize大小做一次计算，如果小于1则设置为1，大于最多显示页数则显示最大页数
 	public List<BookBean> findBooksWithName(String title,Integer pageNum,Integer pageSize){
 		List<BookBean> list=null;
-		if(pageNum==null || pageSize==null){
+		if(DBC.isNullOrEmpty(title) || pageNum==null || pageSize==null){
 			return list;
 		}
 		try{
@@ -112,12 +131,16 @@ public class BookDAO {
 			int rowCount=0;
 			if(brest!=null && brest.next()){
 				rowCount=brest.getInt(1);//获取记录数
+				BookNum=rowCount;
 			}
 			else{
 				return list;
 			}
 			int m_pageSize=pageSize;
 			int MaxPageNum=(rowCount%m_pageSize==0)?(rowCount/m_pageSize):(rowCount/m_pageSize+1);
+			if(MaxPageNum<=0){
+				MaxPageNum=1;
+			}
 			int m_pageNum=pageNum;
 			if(m_pageNum<1){
 				m_pageNum=1;
@@ -126,7 +149,7 @@ public class BookDAO {
 				m_pageNum=MaxPageNum;
 			}
 			if(!DBC.isNullOrEmpty(title)){
-				brest=dbc.creResultSet("select * from books where bTitle like binary '%"+title+"%' limit "+
+				brest=dbc.creResultSet("select * from books where bTitle like '%"+title+"%' limit "+
 						(m_pageNum-1)*m_pageSize+","+m_pageSize);
 				if(brest==null || !brest.next()){
 					return list;
@@ -144,6 +167,8 @@ public class BookDAO {
 					temp.setbLanguage(brest.getString("bLanguage"));
 					temp.setbTime(brest.getString("bTime"));
 					temp.setcID(brest.getString("cID"));
+					temp.setbImg(brest.getString("bImg"));
+					temp.setbSoldNum(brest.getString("bSoldNum"));
 					list.add(temp);
 				}while(brest.next());
 			}
@@ -161,11 +186,15 @@ public class BookDAO {
 		}
 		try{
 			int rowCount=getBooksCount();
+			BookNum=rowCount;
 			if(rowCount==0){
 				return list;
 			}
 			int m_pageSize=pageSize;
 			int MaxPageNum=(rowCount%m_pageSize==0)?(rowCount/m_pageSize):(rowCount/m_pageSize+1);
+			if(MaxPageNum<=0){
+				MaxPageNum=1;
+			}
 			int m_pageNum=pageNum;
 			if(m_pageNum<1){
 				m_pageNum=1;
@@ -191,6 +220,60 @@ public class BookDAO {
 				temp.setbLanguage(brest.getString("bLanguage"));
 				temp.setbTime(brest.getString("bTime"));
 				temp.setcID(brest.getString("cID"));
+				temp.setbImg(brest.getString("bImg"));
+				temp.setbSoldNum(brest.getString("bSoldNum"));
+				list.add(temp);
+			}while(brest.next());
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	//获得热卖书籍
+	public List<BookBean> getHotSoldBooks(Integer pageNum,Integer pageSize){
+		List<BookBean> list=null;
+		if(pageNum==null || pageSize==null){
+			return list;
+		}
+		try{
+			int rowCount=getBooksCount();
+			BookNum=rowCount;
+			if(rowCount==0){
+				return list;
+			}
+			int m_pageSize=pageSize;
+			int MaxPageNum=(rowCount%m_pageSize==0)?(rowCount/m_pageSize):(rowCount/m_pageSize+1);
+			if(MaxPageNum<=0){
+				MaxPageNum=1;
+			}
+			int m_pageNum=pageNum;
+			if(m_pageNum<1){
+				m_pageNum=1;
+			}
+			else if(m_pageNum>MaxPageNum){
+				m_pageNum=MaxPageNum;
+			}
+			brest=dbc.creResultSet("select * from books order by bSoldNum desc limit "+
+					(m_pageNum-1)*m_pageSize+","+m_pageSize);
+			if(brest==null || !brest.next()){
+				return list;
+			}
+			BookBean temp=null;
+			list=new ArrayList<BookBean>();
+			do{
+				temp=new BookBean();
+				temp.setbID(brest.getString("bID"));
+				temp.setbTitle(brest.getString("bTitle"));
+				temp.setbAuthor(brest.getString("bAuthor"));
+				temp.setbCount(brest.getString("bCount"));
+				temp.setbDescription(brest.getString("bDescription"));
+				temp.setbPublisher(brest.getString("bPublisher"));
+				temp.setbLanguage(brest.getString("bLanguage"));
+				temp.setbTime(brest.getString("bTime"));
+				temp.setcID(brest.getString("cID"));
+				temp.setbImg(brest.getString("bImg"));
+				temp.setbSoldNum(brest.getString("bSoldNum"));
 				list.add(temp);
 			}while(brest.next());
 		}catch(SQLException e){
@@ -235,12 +318,21 @@ public class BookDAO {
 			return list;
 		}
 		try{
-			int rowCount=getBooksCount();
-			if(rowCount==0){
+			
+			brest=dbc.creResultSet("select count(*) from books where cID="+cID);//返回记录数目
+			int rowCount=0;
+			if(brest!=null && brest.next()){
+				rowCount=brest.getInt(1);//获取记录数
+				BookNum=rowCount;
+			}
+			else{
 				return list;
 			}
 			int m_pageSize=pageSize;
 			int MaxPageNum=(rowCount%m_pageSize==0)?(rowCount/m_pageSize):(rowCount/m_pageSize+1);
+			if(MaxPageNum<=0){
+				MaxPageNum=1;
+			}
 			int m_pageNum=pageNum;
 			if(m_pageNum<1){
 				m_pageNum=1;
@@ -258,6 +350,7 @@ public class BookDAO {
 			do{
 				temp=new BookBean();
 				temp.setbID(brest.getString("bID"));
+				temp.setbTitle(brest.getString("bTitle"));
 				temp.setbAuthor(brest.getString("bAuthor"));
 				temp.setbCount(brest.getString("bCount"));
 				temp.setbDescription(brest.getString("bDescription"));
@@ -265,6 +358,8 @@ public class BookDAO {
 				temp.setbLanguage(brest.getString("bLanguage"));
 				temp.setbTime(brest.getString("bTime"));
 				temp.setcID(brest.getString("cID"));
+				temp.setbImg(brest.getString("bImg"));
+				temp.setbSoldNum(brest.getString("bSoldNum"));
 				list.add(temp);
 			}while(brest.next());
 		}catch(SQLException e){
@@ -276,7 +371,7 @@ public class BookDAO {
 	
 	
 	//返回书籍的记录数目
-	public int getBooksCount(){
+	private int getBooksCount(){
 		int rowCount=0;
 		try{
 			brest=dbc.creResultSet("select count(*) from books");//返回记录数目
@@ -289,9 +384,16 @@ public class BookDAO {
 		return rowCount;
 	}
 	
+	
+	//必须在执行完查询操作之后才可以调用这个
+	public int getBookNumAfterSearch(){
+		return this.BookNum;
+	}
+	
 	public void CloseBookDAO(){
 		brest=null;
 		bstmt=null;
+		BookNum = 0;
 		dbc.CloseAll();
 	}
 }
