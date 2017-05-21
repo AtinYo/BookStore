@@ -108,7 +108,7 @@
  			    </div>
 			</div>
 			-->
-    		<c:set var="book_img_path" value="/BookStore/assets/books/book_3.jpg" scope="page">
+    		<c:set var="book_img_path" value="/assets/books/book_3.jpg" scope="page">
     		</c:set>
     		<c:forEach items="${sessionScope.MainPage_BookList}" var="book" varStatus="status">
     			<div class="col-sm-2 media">
