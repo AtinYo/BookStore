@@ -97,10 +97,14 @@
 			</div>
 		</div>
 		<hr />
-		<div class="container">
+		<div class="container-fluid" style="width: 90%;">
 			<div class="row">
+				<div class="checkbox-inline" style="margin: 42px;">
+					<input type="checkbox" value="">
+					全选
+				</div>
 				<button type="button" class="btn btn-success btn-lg"
-					style="margin: 25px;">
+					style="margin: 15px;">
 					添加
 				</button>
 				<button type="button" class="btn btn-danger btn-lg"
@@ -110,91 +114,88 @@
 			</div>
 		</div>
 
-		<div class="container">
+		<div class="container-fluid" style="width: 90%;">
 			<!-- for Each -->
-			
+			<div class="row">
+				<div class="col-lg-1">
+					<!-- 通过勾选来进行多条修改 -->
+					<div class="checkbox-inline" style="margin: 25px;">
+						<input type="checkbox" value="">
+					</div>
+				</div>
+				<div class="col-lg-10">
 					<div class="panel panel-default">
 						<div class="row">
-							<!-- 通过勾选来进行多条修改 -->
-
-							<div class="col-lg-1 checkbox-inline" style="margin: 25px;">
-								<input type="checkbox" value="">
+							<div class="col-md-4">
+								<div style="margin: 10px;">
+									<img src="https://placehold.it/100x100?text=IMAGE"
+										class="img-responsive" height="300" width="300" alt="Image">
+								</div>
 							</div>
-							<div class="col-lg-2" style="padding: 5px;">
-								<img src="..">
+							<div class="col-md-8">
+								<div class="col-md-12" style="margin: 40px 20px 10px 10px;">
+									<form class="form-inline">
+										<label for="rg-from">
+											书名:
+										</label>
+										<div class="form-group" width="500">
+											<input type="text" size="90" id="rg-from" name="rg-from"
+												value="" class="form-control">
+										</div>
+										<button class="btn btn-primary" type="button">
+											保存
+										</button>
+									</form>
+								</div>
+								<div class="col-md-12" style="margin: 20px 20px 10px 10px;">
+									<form class="form-inline">
+										<label for="zz-from">
+											作者:
+										</label>
+										<div class="form-group">
+											<input type="text" size="90" id="zz-from" name="zz-from"
+												value="" class="form-control">
+										</div>
+										<button class="btn btn-primary" type="button">
+											保存
+										</button>
+									</form>
+								</div>
+								<div class="col-md-12" style="margin: 20px 20px 10px 10px;">
+									<form class="form-inline">
+										<label for="jj-from">
+											简介:
+										</label>
+										<div class="form-group">
+											<input type="text" size="90" id="jj-from" name="jj-from"
+												value="" class="form-control">
+										</div>
+										<button class="btn btn-primary" type="button">
+											保存
+										</button>
+									</form>
+								</div>
+								<div class="col-md-12" style="margin: 20px 20px 10px 10px;">
+									<form class="form-inline">
+										<!-- 绑定来显示数量 -->
+										<label for="sl-from" style="margin-right: 10px;">
+											数量: ${20}
+										</label>
+										<div id="sl-from" class="btn-group" role="group">
+											<button type="button" class="btn btn-default">
+												+
+											</button>
+											<button type="button" class="btn btn-default">
+												-
+											</button>
+										</div>
+									</form>
+								</div>
 							</div>
-							<div class="col-lg-8 pull-right">
-								<div class="row" style="padding: 10px;">
-									<div class="col-lg-12">
-										<form class="form-inline">
-											<label for="rg-from">
-												书名:
-											</label>
-											<div class="form-group">
-												<input type="text" id="rg-from" name="rg-from" value=""
-													class="form-control">
-											</div>
-											<button class="btn btn-primary" type="button">
-												保存
-											</button>
-										</form>
-									</div>
-								</div>
-								<div class="row" style="padding: 10px;">
-									<div class="col-lg-12">
-										<form class="form-inline">
-											<label for="zz-from">
-												作者:
-											</label>
-											<div class="form-group">
-												<input type="text" id="zz-from" name="zz-from" value=""
-													class="form-control">
-											</div>
-											<button class="btn btn-primary" type="button">
-												保存
-											</button>
-										</form>
-									</div>
-								</div>
-								<div class="row" style="padding: 10px;">
-									<div class="col-lg-12">
-										<form class="form-inline">
-											<label for="jj-from">
-												简介:
-											</label>
-											<div class="form-group">
-												<input type="text" id="jj-from" name="jj-from" value=""
-													class="form-control">
-											</div>
-											<button class="btn btn-primary" type="button">
-												保存
-											</button>
-										</form>
-									</div>
-								</div>
-								<div class="row" style="padding: 10px;">
-									<div class="col-lg-12">
-										<form class="form-inline">
-											<!-- 绑定来显示数量 -->
-											<label for="sl-from" style="margin-right: 10px;">
-												数量: ${20}
-											</label>
-											<div id="sl-from" class="btn-group" role="group">
-												<button type="button" class="btn btn-default">
-													+
-												</button>
-												<button type="button" class="btn btn-default">
-													-
-												</button>
-											</div>
-										</form>
-									</div>
-								</div>
-
-							</div>
-
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
 	</body>
 </html>
