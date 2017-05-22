@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="81" version="2.0">
+<workbench progressCount="66" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="1052" x="-4" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -29,7 +29,7 @@
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="com.genuitec.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.genuitec.ui.browser.editor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.webdesigner3.editors.jsp" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" itemType="typePlaceholder" x="38" y="22"/>
@@ -59,6 +59,10 @@
 <part id="14"/>
 <part id="15"/>
 <part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+<part id="20"/>
 </presentation>
 </folder>
 </info>
@@ -75,7 +79,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainServlet.java" partName="MainServlet.java" path="G:/BookStore/BookStore/BookStore/src/servlets/MainServlet.java" title="MainServlet.java" tooltip="BookStore/src/servlets/MainServlet.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/servlets/MainServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5226" selectionTopPixel="1344"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1860" selectionTopPixel="579"/>
 </editor>
 <editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="RegisterPage.jsp" partName="RegisterPage.jsp" path="G:/BookStore/BookStore/BookStore/WebRoot/JSP/user/RegisterPage.jsp" title="RegisterPage.jsp" tooltip="BookStore/WebRoot/JSP/user/RegisterPage.jsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/WebRoot/JSP/user/RegisterPage.jsp"/>
@@ -121,8 +125,23 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/servlets/RegisterServlet.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2163" selectionTopPixel="816"/>
 </editor>
-<editor activePart="true" focus="true" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="UserOrderPage.jsp" partName="UserOrderPage.jsp" path="G:/BookStore/BookStore/BookStore/WebRoot/JSP/user/UserOrderPage.jsp" title="UserOrderPage.jsp" tooltip="BookStore/WebRoot/JSP/user/UserOrderPage.jsp" workbook="DefaultEditorWorkbook">
+<editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="UserOrderPage.jsp" partName="UserOrderPage.jsp" path="G:/BookStore/BookStore/BookStore/WebRoot/JSP/user/UserOrderPage.jsp" title="UserOrderPage.jsp" tooltip="BookStore/WebRoot/JSP/user/UserOrderPage.jsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/WebRoot/JSP/user/UserOrderPage.jsp"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdminServlet.java" partName="AdminServlet.java" path="G:/BookStore/BookStore/BookStore/src/servlets/AdminServlet.java" title="AdminServlet.java" tooltip="BookStore/src/servlets/AdminServlet.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/servlets/AdminServlet.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="471" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DBC.java" partName="DBC.java" path="G:/BookStore/BookStore/BookStore/src/dao/DBC.java" title="DBC.java" tooltip="BookStore/src/dao/DBC.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/dao/DBC.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1408" selectionTopPixel="1071"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDAO.java" partName="UserDAO.java" path="G:/BookStore/BookStore/BookStore/src/dao/UserDAO.java" title="UserDAO.java" tooltip="BookStore/src/dao/UserDAO.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/src/dao/UserDAO.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="7" selectionOffset="266" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="LoginPage.jsp" partName="LoginPage.jsp" path="G:/BookStore/BookStore/BookStore/WebRoot/JSP/user/LoginPage.jsp" title="LoginPage.jsp" tooltip="BookStore/WebRoot/JSP/user/LoginPage.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BookStore/WebRoot/JSP/user/LoginPage.jsp"/>
 </editor>
 </editors>
 <views>
@@ -144,8 +163,7 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings"/>
+<expanded>&#x0A;<category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -394,135 +412,76 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/BookStore/WebRoot/JSP/pages/SearchPage.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/servlets/SearchServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/BookStore/WebRoot/JSP/pages/SearchPage.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/BookStore/WebRoot/JSP/pages/MainPage.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/BookStore/WebRoot/index.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/BookStore/WebRoot/JSP/Common/NavBar.jsp"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" path="/BookStore/WebRoot/WEB-INF/web.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/servlets/MainServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/BookStore/WebRoot/JSP/user/UserCenterPage.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/servlets/UserCenterServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/BookStore/WebRoot/JSP/pages/CalculateCenterPage.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/servlets/UserOrderServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/servlets/CalculateCenterServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/servlets/RegisterServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/servlets/LoginServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/BookStore/WebRoot/JSP/user/UserOrderPage.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/servlets/AdminServlet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/BookStore/WebRoot/JSP/user/RegisterPage.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/BookStore/WebRoot/JSP/user/RegisterPage.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/dao/DBC.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BookStore/src/dao/UserDAO.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/BookStore/WebRoot/JSP/user/LoginPage.jsp"/>
 </editors>
-<item historyLabel="SearchPage.jsp" index="2">
-<position info="not_deleted" x="589" y="0"/>
+<item historyLabel="NavBar.jsp" index="0"/>
+<item historyLabel="web.xml" index="1"/>
+<item historyLabel="MainServlet.java" index="2">
+<position info="not_deleted" x="1242" y="0"/>
 </item>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="SearchServlet.java" index="1">
-<position info="not_deleted" x="2628" y="0"/>
+<item historyLabel="AdminServlet.java" index="3">
+<position info="not_deleted" x="1083" y="0"/>
 </item>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="SearchPage.jsp" index="0">
-<position info="not_deleted" x="662" y="0"/>
+<item historyLabel="MainServlet.java" index="2">
+<position info="not_deleted" x="1860" y="0"/>
 </item>
-<item historyLabel="SearchPage.jsp" index="2">
-<position info="not_deleted" x="2162" y="0"/>
+<item historyLabel="AdminServlet.java" index="3">
+<position info="not_deleted" x="1083" y="0"/>
 </item>
-<item historyLabel="SearchPage.jsp" index="0">
+<item historyLabel="AdminServlet.java" index="3">
+<position info="not_deleted" x="1886" y="0"/>
+</item>
+<item historyLabel="AdminServlet.java" index="3">
+<position info="not_deleted" x="1886" y="0"/>
+</item>
+<item historyLabel="AdminServlet.java" index="3">
+<position info="not_deleted" x="2260" y="0"/>
+</item>
+<item historyLabel="RegisterPage.jsp" index="4">
 <position/>
 </item>
-<item historyLabel="SearchPage.jsp" index="2">
+<item historyLabel="RegisterPage.jsp" index="5">
 <position/>
 </item>
-<item historyLabel="SearchPage.jsp" index="2">
-<position/>
+<item historyLabel="AdminServlet.java" index="3">
+<position info="not_deleted" x="471" y="0"/>
 </item>
-<item historyLabel="SearchPage.jsp" index="2">
-<position/>
+<item historyLabel="RegisterPage.jsp" index="4">
+<position info="not_deleted" x="1099" y="0"/>
 </item>
-<item historyLabel="SearchPage.jsp" index="2">
-<position/>
+<item historyLabel="RegisterPage.jsp" index="4"/>
+<item historyLabel="RegisterPage.jsp" index="4"/>
+<item historyLabel="RegisterPage.jsp" index="4"/>
+<item historyLabel="RegisterPage.jsp" index="4">
+<position info="not_deleted" x="2225" y="0"/>
 </item>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="MainPage.jsp" index="3"/>
-<item historyLabel="index.jsp" index="4"/>
-<item historyLabel="MainPage.jsp" index="3"/>
-<item historyLabel="SearchPage.jsp" index="0">
-<position info="not_deleted" x="589" y="0"/>
+<item historyLabel="RegisterPage.jsp" index="5">
+<position info="not_deleted" x="509" y="0"/>
 </item>
-<item historyLabel="MainPage.jsp" index="3"/>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="SearchPage.jsp" index="0">
-<position info="not_deleted" x="262" y="0"/>
+<item historyLabel="RegisterPage.jsp" index="5">
+<position info="not_deleted" x="2110" y="0"/>
 </item>
-<item historyLabel="SearchPage.jsp" index="2">
-<position info="not_deleted" x="264" y="0"/>
+<item historyLabel="DBC.java" index="6">
+<position info="not_deleted" x="1408" y="0"/>
 </item>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="MainServlet.java" index="5">
-<position info="not_deleted" x="5226" y="0"/>
-</item>
-<item historyLabel="SearchPage.jsp" index="0">
+<item historyLabel="UserDAO.java" index="7">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="UserCenterPage.jsp" index="6"/>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="UserCenterPage.jsp" index="6"/>
-<item historyLabel="UserCenterServlet.java" index="7">
-<position info="not_deleted" x="2328" y="0"/>
-</item>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="MainPage.jsp" index="3"/>
-<item historyLabel="SearchPage.jsp" index="0"/>
-<item historyLabel="CalculateCenterPage.jsp" index="8"/>
-<item historyLabel="UserOrderServlet.java" index="9">
-<position info="not_deleted" x="624" y="0"/>
-</item>
-<item historyLabel="CalculateCenterPage.jsp" index="8"/>
-<item historyLabel="CalculateCenterServlet.java" index="10">
-<position info="not_deleted" x="1750" y="0"/>
-</item>
-<item historyLabel="CalculateCenterPage.jsp" index="8"/>
-<item historyLabel="UserCenterServlet.java" index="7">
-<position info="not_deleted" x="2221" y="0"/>
-</item>
-<item historyLabel="SearchServlet.java" index="1">
-<position info="not_deleted" x="2208" y="0"/>
-</item>
-<item historyLabel="RegisterServlet.java" index="11">
-<position info="not_deleted" x="2163" y="0"/>
-</item>
-<item historyLabel="SearchServlet.java" index="1">
-<position info="not_deleted" x="2208" y="0"/>
-</item>
-<item historyLabel="RegisterServlet.java" index="11">
-<position info="not_deleted" x="2163" y="0"/>
-</item>
-<item historyLabel="LoginServlet.java" index="12">
-<position info="not_deleted" x="2185" y="0"/>
-</item>
-<item historyLabel="CalculateCenterServlet.java" index="10">
-<position info="not_deleted" x="2134" y="0"/>
-</item>
-<item historyLabel="UserOrderServlet.java" index="9">
-<position info="not_deleted" x="2815" y="0"/>
-</item>
-<item active="true" historyLabel="UserOrderPage.jsp" index="13"/>
+<item active="true" historyLabel="LoginPage.jsp" index="8"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="topleft"/>
-<trimItem IMemento.internal.id="bottomleft"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@1108c18"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@15d8362"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -530,11 +489,25 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="LoginPage.jsp" tooltip="BookStore/WebRoot/JSP/user/LoginPage.jsp">
+<persistable path="/BookStore/WebRoot/JSP/user/LoginPage.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDAO.java" tooltip="BookStore/src/dao/UserDAO.java">
+<persistable path="/BookStore/src/dao/UserDAO.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DBC.java" tooltip="BookStore/src/dao/DBC.java">
+<persistable path="/BookStore/src/dao/DBC.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdminServlet.java" tooltip="BookStore/src/servlets/AdminServlet.java">
+<persistable path="/BookStore/src/servlets/AdminServlet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" name="web.xml" tooltip="BookStore/WebRoot/WEB-INF/web.xml">
+<persistable path="/BookStore/WebRoot/WEB-INF/web.xml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="UserOrderPage.jsp" tooltip="BookStore/WebRoot/JSP/user/UserOrderPage.jsp">
 <persistable path="/BookStore/WebRoot/JSP/user/UserOrderPage.jsp"/>
 </file>
@@ -555,9 +528,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdressDAO.java" tooltip="BookStore/src/dao/AdressDAO.java">
 <persistable path="/BookStore/src/dao/AdressDAO.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDAO.java" tooltip="BookStore/src/dao/UserDAO.java">
-<persistable path="/BookStore/src/dao/UserDAO.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClassficationDAO.java" tooltip="BookStore/src/dao/ClassficationDAO.java">
 <persistable path="/BookStore/src/dao/ClassficationDAO.java"/>

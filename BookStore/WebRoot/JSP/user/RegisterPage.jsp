@@ -13,7 +13,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Register.jsp</title>
 	</head>
-
 	<body>
 		<div class="container-fluid" style="width: 100%; font-size: 1.2em;">
 		<div class="panel panel-default">
@@ -39,8 +38,8 @@
                                 
 								<div class="form-group">
 									<label for="userPassword" class="control-label">密码 </label>
-									<input type="password" class="form-control" name="userPassword"
-										id="userPassword" placeholder="请输入至少六位字母长度密码" required="required">
+									<input pattern=".{6,}" type="password" class="form-control" name="userPassword"
+										id="userPassword" placeholder="请输入至少六位字母长度密码" required="required" title="请输入至少六位字母长度密码"/>
 								</div>
 								
 								<button type="submit" class="btn btn-large btn btn-warning btn-lg btn-block">

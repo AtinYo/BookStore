@@ -100,7 +100,6 @@ public final class RegisterPage_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("\t\t<title>Register.jsp</title>\r\n");
       out.write("\t</head>\r\n");
-      out.write("\r\n");
       out.write("\t<body>\r\n");
       out.write("\t\t<div class=\"container-fluid\" style=\"width: 100%; font-size: 1.2em;\">\r\n");
       out.write("\t\t<div class=\"panel panel-default\">\r\n");
@@ -114,7 +113,7 @@ public final class RegisterPage_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\t\t\t\t\t\t\t                       \r\n");
       out.write("\t\t\t\t\t\t\t<form action=\"");
       out.print(basePath);
-      out.write("servlet/RegisterServlet\" method=\"post\">\r\n");
+      out.write("servlet/RegisterServlet\" method=\"post\" name=\"ReForm\">\r\n");
       out.write("\t\t\t\t\t\t\t\t<div class=\"form-group\">\r\n");
       out.write("                                    <label for=\"userAccount\" class=\"control-label\" >账号 </label>\r\n");
       out.write("                                    <input type=\"text\" class=\"form-control\" name=\"userAccount\" id=\"userAccount\"\r\n");
@@ -128,8 +127,8 @@ public final class RegisterPage_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                                \r\n");
       out.write("\t\t\t\t\t\t\t\t<div class=\"form-group\">\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<label for=\"userPassword\" class=\"control-label\">密码 </label>\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" name=\"userPassword\"\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t\tid=\"userPassword\" placeholder=\"请输入至少六位字母长度密码\" required=\"required\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<input pattern=\".{6,}\" type=\"password\" class=\"form-control\" name=\"userPassword\"\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\tid=\"userPassword\" placeholder=\"请输入至少六位字母长度密码\" required=\"required\" title=\"请输入至少六位字母长度密码\"/>\r\n");
       out.write("\t\t\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t\t\t\r\n");
       out.write("\t\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-large btn btn-warning btn-lg btn-block\">\r\n");
